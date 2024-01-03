@@ -1,0 +1,16 @@
+#####################################################   
+demo-multi-ds:
+  datasource:
+    masterUrl: jdbc:mysql://localhost:33312/demo-multi-ds?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Universal
+    slaveUrl: jdbc:mysql://localhost:33313/demo-multi-ds?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Universal
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+    connectionTimeOut: 20000
+    minIdle: 20
+    maxPoolSize: 100
+    idleTimeout: 10000
+    poolName: connection-pool
+    autoCommit: false
+    maxLifetime: 72000
+    leakDetectionThreshold: 64800
