@@ -6,7 +6,7 @@ docker pull mysql/mysql-server:5.7
 
 docker network create demo-multi-ds-group-net
 
-docker run -d --name=master-demo-multi-ds -p 33312:3306 --net=demo-multi-ds-group-net --hostname=master-demo-multi-ds ^
+docker run -d --name=master-demo-multi-ds -p 33306:3306 --net=demo-multi-ds-group-net --hostname=master-demo-multi-ds ^
   -v %cd%/demo-multi-ds1:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root ^
   mysql/mysql-server:5.7 ^
   --server-id=1 ^
@@ -27,7 +27,7 @@ docker run -d --name=master-demo-multi-ds -p 33312:3306 --net=demo-multi-ds-grou
   --loose-group-replication-single-primary-mode="ON" ^
   --loose-group-replication-enforce-update-everywhere-checks="OFF"
 
-docker run -d --name=slave-demo-multi-ds -p 33313:3306 --net=demo-multi-ds-group-net --hostname=slave-demo-multi-ds ^
+docker run -d --name=slave-demo-multi-ds -p 33307:3306 --net=demo-multi-ds-group-net --hostname=slave-demo-multi-ds ^
   -v %cd%/demo-multi-ds2:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root ^
   mysql/mysql-server:5.7 ^
   --server-id=2 ^
